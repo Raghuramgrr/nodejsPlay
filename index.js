@@ -17,7 +17,7 @@ var connection = mysql.createConnection({
 
   host     : 'localhost',
   user     : 'root',
-  password : 'password',
+  password : 'urpasswd',
   database : 'nodedb'
 
 });
