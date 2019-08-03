@@ -11,9 +11,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 //app.use(express.urlencoded());
 //app.use(app.router);
 app.use(express.static('public'));
+app.set('view engine', 'ejs');
 
 
 var connection = mysql.createConnection({
+
 
   host     : 'localhost',
   user     : 'root',
@@ -25,31 +27,22 @@ var connection = mysql.createConnection({
 //connection.connect();
 connection.connect(function(err) {
   if (err) throw err;
-  console.log("Fuck you!");
+  console.log("Connected !");
 });
 
 
-app.get('/', function (req, res) {
-
-    res.sendFile(__dirname + '/index.html');
-
-});
 
 
-app.post('/data', function(req, res){
 
-    var username=req.body.name;
-    console.log(username)
-    var sql = "INSERT INTO `names`(`names`) VALUES ('"+req.body.name+"')";
-
-    connection.query(sql , function(err, result){
-        if(err) throw err;
-        console.log("Fuck you again");
-    });
-
-    res.send(username);
+ app.get('/', function(req, res) {
+ connection.query("SELECT * FROM names", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  res.render('home',{dropdownvals:result});
 
 });
+ 
+ });
 
 //connection.end();
 

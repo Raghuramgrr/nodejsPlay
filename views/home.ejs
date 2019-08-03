@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset=“UTF-8”>
+
+<script src=“https://ajax.googleapis.com…”></script>
+<script src=“https://maxcdn.bootstrapcdn…”></script>
+   <title>
+		Select data from DB 
+	</title>
+  </head>
+  <body>
+    <form action="/" method="GET">
+       	<select>
+      	<% dropdownvals.forEach(function(dropdownval){ %>
+       		<option value="">
+    		<%= dropdownval.names %>
+    		</option>
+        <% console.log(dropdownval.names)%>
+  		<% })%>
+
+     	 </select>
+      
+        </form>
+  </body>
+</html>

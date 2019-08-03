@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset=“UTF-8”>
+
+<script src=“https://ajax.googleapis.com…”></script>
+<script src=“https://maxcdn.bootstrapcdn…”></script>
+   <title>
+		Hello World
+	</title>
+  </head>
+  <body>
+    <form action="/" method="GET">
+       	<select>
+      	<% dropdownvals.forEach(function(dropdownval){ %>
+    		<%= dropdownval.names %>
+        <% console.log(dropdownval.names)%>
+  		<% })%>
+     	 </select>
+      
+        </form>
+  </body>
+</html>

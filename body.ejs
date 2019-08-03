@@ -1,0 +1,21 @@
+<div>
+  <div class="header">
+        <h1>Selecting  Data</h1>
+        <p>From Mysql</p>       
+    </div>
+
+        <form action="/data" method="GET">
+        <label for="City">city</label>
+       	<select class="form-control" id="sel1">
+      	<% dropdownvals.forEach(function(dropdownval){ %>
+    		<%= dropdownval.names %>
+  		<% })%>
+     	 </select>
+
+      
+        </form>
+
+
+  
+    <script type="text/javascript" src="main.js"></script>
+</div>
